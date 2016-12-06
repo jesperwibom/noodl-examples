@@ -241,7 +241,7 @@
                   "ports": [],
                   "dynamicports": [
                      {
-                        "name": "id",
+                        "name": "msg",
                         "type": {
                            "name": "string"
                         },
@@ -492,25 +492,25 @@
                   "ports": [],
                   "dynamicports": [
                      {
+                        "name": "factor",
+                        "plug": "input",
+                        "type": {
+                           "name": "number"
+                        },
+                        "group": "Inputs",
+                        "index": 2
+                     },
+                     {
                         "name": "color",
                         "plug": "input",
                         "type": {
                            "name": "color"
                         },
                         "group": "Inputs",
-                        "index": 2
-                     },
-                     {
-                        "name": "red",
-                        "type": {
-                           "name": "string"
-                        },
-                        "plug": "output",
-                        "group": "Outputs",
                         "index": 3
                      },
                      {
-                        "name": "green",
+                        "name": "json",
                         "type": {
                            "name": "string"
                         },
@@ -519,7 +519,7 @@
                         "index": 4
                      },
                      {
-                        "name": "blue",
+                        "name": "jsoncolor",
                         "type": {
                            "name": "string"
                         },
@@ -528,13 +528,40 @@
                         "index": 5
                      },
                      {
+                        "name": "red",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 6
+                     },
+                     {
+                        "name": "green",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 7
+                     },
+                     {
+                        "name": "blue",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 8
+                     },
+                     {
                         "name": "valueChanged",
                         "type": {
                            "name": "boolean"
                         },
                         "plug": "output",
                         "group": "Outputs",
-                        "index": 6
+                        "index": 9
                      }
                   ],
                   "children": []
@@ -1226,930 +1253,227 @@
          }
       },
       {
-         "name": "/Components/Page Navigation",
+         "name": "/Helpers/Stringify",
          "graph": {
             "connections": [
                {
-                  "fromId": "7fa87d96-4611-abcc-f887-d044d5917dcb",
-                  "fromProperty": "pageBackActive",
-                  "toId": "fcb13528-edfa-ac41-d58b-710544f65034",
-                  "toProperty": "value"
+                  "fromId": "cc869c90-1f27-7f64-bcf5-7acabaf00868",
+                  "fromProperty": "color",
+                  "toId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "toProperty": "color"
                },
                {
-                  "fromId": "fcb13528-edfa-ac41-d58b-710544f65034",
-                  "fromProperty": "savedValue",
-                  "toId": "c639f6bc-6c5a-f79f-b772-7915e724dc08",
-                  "toProperty": "value"
+                  "fromId": "cc869c90-1f27-7f64-bcf5-7acabaf00868",
+                  "fromProperty": "factor",
+                  "toId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "toProperty": "factor"
                },
                {
-                  "fromId": "d9970ad6-0f17-cf78-4d1a-08d83c350837",
-                  "fromProperty": "opacity",
-                  "toId": "2a712752-b521-a679-d02d-3e3f8fa5dfaa",
-                  "toProperty": "opacity"
+                  "fromId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "fromProperty": "red",
+                  "toId": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "toProperty": "red"
                },
                {
-                  "fromId": "fcb13528-edfa-ac41-d58b-710544f65034",
-                  "fromProperty": "savedValue",
-                  "toId": "d9970ad6-0f17-cf78-4d1a-08d83c350837",
-                  "toProperty": "to-active"
+                  "fromId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "fromProperty": "green",
+                  "toId": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "toProperty": "green"
                },
                {
-                  "fromId": "c639f6bc-6c5a-f79f-b772-7915e724dc08",
-                  "fromProperty": "result",
-                  "toId": "d9970ad6-0f17-cf78-4d1a-08d83c350837",
-                  "toProperty": "to-deactive"
+                  "fromId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "fromProperty": "blue",
+                  "toId": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "toProperty": "blue"
                },
                {
-                  "fromId": "c639f6bc-6c5a-f79f-b772-7915e724dc08",
-                  "fromProperty": "result",
-                  "toId": "2a712752-b521-a679-d02d-3e3f8fa5dfaa",
-                  "toProperty": "touchPropagation"
+                  "fromId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "fromProperty": "json",
+                  "toId": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "toProperty": "json"
                },
                {
-                  "fromId": "2a712752-b521-a679-d02d-3e3f8fa5dfaa",
-                  "fromProperty": "touch.tap",
-                  "toId": "b3d3976f-321c-0e17-226e-ecb1c0983ae9",
-                  "toProperty": "back"
+                  "fromId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "fromProperty": "jsoncolor",
+                  "toId": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "toProperty": "jsonColor"
                },
                {
-                  "fromId": "6166c0a5-091d-bbcb-73c4-f237258dc04d",
-                  "fromProperty": "touch.tap",
-                  "toId": "31fe840c-b362-78f0-61b6-efe54ef06373",
-                  "toProperty": "navigate"
-               },
-               {
-                  "fromId": "7fa87d96-4611-abcc-f887-d044d5917dcb",
-                  "fromProperty": "pageForwardPath",
-                  "toId": "31fe840c-b362-78f0-61b6-efe54ef06373",
-                  "toProperty": "destination"
-               },
-               {
-                  "fromId": "81b3581f-5cb4-4007-be1c-6dc04b1a2b96",
-                  "fromProperty": "savedValue",
-                  "toId": "4a6944d2-f30e-f0c5-fd03-5136ba4691e3",
-                  "toProperty": "value"
-               },
-               {
-                  "fromId": "81b3581f-5cb4-4007-be1c-6dc04b1a2b96",
-                  "fromProperty": "savedValue",
-                  "toId": "d0024783-e373-03de-5506-d077dc848d47",
-                  "toProperty": "to-active"
-               },
-               {
-                  "fromId": "4a6944d2-f30e-f0c5-fd03-5136ba4691e3",
-                  "fromProperty": "result",
-                  "toId": "d0024783-e373-03de-5506-d077dc848d47",
-                  "toProperty": "to-deactive"
-               },
-               {
-                  "fromId": "7fa87d96-4611-abcc-f887-d044d5917dcb",
-                  "fromProperty": "pageForwardActive",
-                  "toId": "81b3581f-5cb4-4007-be1c-6dc04b1a2b96",
-                  "toProperty": "value"
-               },
-               {
-                  "fromId": "4a6944d2-f30e-f0c5-fd03-5136ba4691e3",
-                  "fromProperty": "result",
-                  "toId": "6166c0a5-091d-bbcb-73c4-f237258dc04d",
-                  "toProperty": "touchPropagation"
-               },
-               {
-                  "fromId": "d0024783-e373-03de-5506-d077dc848d47",
-                  "fromProperty": "opacity",
-                  "toId": "6166c0a5-091d-bbcb-73c4-f237258dc04d",
-                  "toProperty": "opacity"
+                  "fromId": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "fromProperty": "valueChanged",
+                  "toId": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "toProperty": "valueChanged"
                }
             ],
             "roots": [
                {
-                  "id": "7fb86be9-e933-d0a7-93b8-766b1111afbf",
-                  "type": "Group",
-                  "version": 2,
-                  "x": 275,
-                  "y": 312,
+                  "id": "707d93c1-d02d-2b8d-c8fd-4fd0051b4427",
+                  "type": "Javascript2",
+                  "x": 204,
+                  "y": 297,
                   "parameters": {
-                     "sizeMode": "childHeight",
-                     "alignY": "bottom",
-                     "paddingLeft": 25,
-                     "paddingRight": 25,
-                     "paddingBottom": 25
+                     "code": "function hexToRgb(hex) {\n    if (hex) {\n        var bigint = parseInt(hex.substr(1), 16);\n        var r = (bigint >> 16) & 255;\n        var g = (bigint >> 8) & 255;\n        var b = bigint & 255;\n        var color  = [r, g, b] ;\n        return color; \n    } else\n        return [0,0,0];\n    }\n\n\n\n\ndefine({\n    inputs: {\n        factor:\"number\",\n        color: \"color\"\n    },\n    outputs: {\n        json: \"string\",\n        jsoncolor: \"string\",\n        red: \"string\",\n        green: \"string\",\n        blue: \"string\",\n        valueChanged: \"boolean\"\n    },\n    setup: function(inputs, outputs) {\n\n    },\n    run: function(inputs, outputs) {\n        var colors = hexToRgb(inputs.color);\n        \n        outputs.red = Math.trunc(inputs.factor * colors[0]);\n        outputs.green = Math.trunc(inputs.factor * colors[1]);\n        outputs.blue = Math.trunc(inputs.factor * colors[2]);\n        outputs.json = JSON.stringify({ red: colors[0], green: colors[1], blue: colors[2]});\n        outputs.jsoncolor = JSON.stringify({ c: inputs.color});\n        this.sendSignalOnOutput(\"valueChanged\");\n        \n    }\n});\n\nfunction map_range(value, low1, high1, low2, high2) {\n    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);\n}"
                   },
                   "ports": [],
-                  "dynamicports": [],
-                  "children": [
+                  "dynamicports": [
                      {
-                        "id": "2a712752-b521-a679-d02d-3e3f8fa5dfaa",
-                        "type": "Group",
-                        "version": 2,
-                        "label": "Back BTN",
-                        "x": 20,
-                        "y": 46,
-                        "parameters": {
-                           "sizeMode": "childSize"
+                        "name": "factor",
+                        "plug": "input",
+                        "type": {
+                           "name": "number"
                         },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": [
-                           {
-                              "id": "db8f823b-69f8-af46-d51d-21cd0a5ff9c7",
-                              "type": "Circle",
-                              "x": 315,
-                              "y": 475,
-                              "parameters": {
-                                 "solid": true,
-                                 "lineWidth": 3,
-                                 "color": "#FFA400",
-                                 "width": {
-                                    "value": 68,
-                                    "unit": "px"
-                                 },
-                                 "alignX": "center",
-                                 "alignY": "center"
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           },
-                           {
-                              "id": "839ad6bf-0604-9b82-9bee-c68b7aa99083",
-                              "type": "Text",
-                              "version": 2,
-                              "x": 315,
-                              "y": 475,
-                              "parameters": {
-                                 "text": "<",
-                                 "fontFamily": "assets/Muli-Regular.ttf",
-                                 "fontSize": 60,
-                                 "alignX": "center",
-                                 "alignY": "center",
-                                 "alignment": "center",
-                                 "verticalAlignment": "center",
-                                 "sizeMode": "childWidth",
-                                 "x": -3,
-                                 "y": -3
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           },
-                           {
-                              "id": "3d9177e1-394e-7444-0777-03cd46bdc4c2",
-                              "type": "Circle",
-                              "x": 315,
-                              "y": 536,
-                              "parameters": {
-                                 "solid": false,
-                                 "lineWidth": 3,
-                                 "color": "#ffffff",
-                                 "width": {
-                                    "value": 60,
-                                    "unit": "px"
-                                 },
-                                 "alignX": "center",
-                                 "alignY": "center"
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           }
-                        ]
+                        "group": "Inputs",
+                        "index": 2
                      },
                      {
-                        "id": "6166c0a5-091d-bbcb-73c4-f237258dc04d",
-                        "type": "Group",
-                        "version": 2,
-                        "label": "Forward BTN",
-                        "x": 20,
-                        "y": 270,
-                        "parameters": {
-                           "sizeMode": "childSize",
-                           "alignX": "right"
+                        "name": "color",
+                        "plug": "input",
+                        "type": {
+                           "name": "color"
                         },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": [
-                           {
-                              "id": "e6520b04-4ea0-063f-34b0-1be91fce90af",
-                              "type": "Circle",
-                              "x": 349.26964597454753,
-                              "y": 735.231015657557,
-                              "parameters": {
-                                 "solid": true,
-                                 "lineWidth": 3,
-                                 "color": "#FFA400",
-                                 "width": {
-                                    "value": 68,
-                                    "unit": "px"
-                                 },
-                                 "alignX": "center",
-                                 "alignY": "center"
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           },
-                           {
-                              "id": "9e6e31c3-a6f9-1968-bdbe-6f02944f8b94",
-                              "type": "Text",
-                              "version": 2,
-                              "x": 20,
-                              "y": 61,
-                              "parameters": {
-                                 "text": ">",
-                                 "fontFamily": "assets/Muli-Regular.ttf",
-                                 "fontSize": 60,
-                                 "alignX": "center",
-                                 "alignY": "center",
-                                 "alignment": "center",
-                                 "verticalAlignment": "center",
-                                 "sizeMode": "childWidth",
-                                 "x": 3,
-                                 "y": -3
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           },
-                           {
-                              "id": "bb9d5c49-2d8b-2433-c159-5fa5f8ee7091",
-                              "type": "Circle",
-                              "x": 315,
-                              "y": 536,
-                              "parameters": {
-                                 "solid": false,
-                                 "lineWidth": 3,
-                                 "color": "#ffffff",
-                                 "width": {
-                                    "value": 60,
-                                    "unit": "px"
-                                 },
-                                 "alignX": "center",
-                                 "alignY": "center"
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           }
-                        ]
+                        "group": "Inputs",
+                        "index": 3
+                     },
+                     {
+                        "name": "json",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 4
+                     },
+                     {
+                        "name": "jsoncolor",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 5
+                     },
+                     {
+                        "name": "red",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 6
+                     },
+                     {
+                        "name": "green",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 7
+                     },
+                     {
+                        "name": "blue",
+                        "type": {
+                           "name": "string"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 8
+                     },
+                     {
+                        "name": "valueChanged",
+                        "type": {
+                           "name": "boolean"
+                        },
+                        "plug": "output",
+                        "group": "Outputs",
+                        "index": 9
                      }
-                  ]
+                  ],
+                  "children": []
                },
                {
-                  "id": "7fa87d96-4611-abcc-f887-d044d5917dcb",
+                  "id": "cc869c90-1f27-7f64-bcf5-7acabaf00868",
                   "type": "Component Inputs",
-                  "x": -520.1086991847147,
-                  "y": 366.78430637128065,
+                  "x": -83,
+                  "y": 259,
                   "parameters": {},
                   "ports": [
                      {
-                        "name": "pageForwardPath",
+                        "name": "color",
                         "plug": "output",
+                        "type": {
+                           "name": "*"
+                        },
+                        "index": 0
+                     },
+                     {
+                        "name": "factor",
+                        "plug": "output",
+                        "type": {
+                           "name": "*"
+                        },
+                        "index": 1
+                     }
+                  ],
+                  "dynamicports": [],
+                  "children": []
+               },
+               {
+                  "id": "7b0710e4-7675-a02f-8502-4616e1adbde4",
+                  "type": "Component Outputs",
+                  "x": -111,
+                  "y": 406,
+                  "parameters": {},
+                  "ports": [
+                     {
+                        "name": "json",
+                        "plug": "input",
+                        "type": {
+                           "name": "*"
+                        },
+                        "index": 0
+                     },
+                     {
+                        "name": "red",
+                        "plug": "input",
                         "type": {
                            "name": "*"
                         },
                         "index": 1
                      },
                      {
-                        "name": "pageBackActive",
-                        "plug": "output",
+                        "name": "green",
+                        "plug": "input",
                         "type": {
                            "name": "*"
                         },
                         "index": 2
                      },
                      {
-                        "name": "pageForwardActive",
-                        "plug": "output",
+                        "name": "blue",
+                        "plug": "input",
                         "type": {
                            "name": "*"
                         },
                         "index": 3
+                     },
+                     {
+                        "name": "jsonColor",
+                        "plug": "input",
+                        "type": {
+                           "name": "*"
+                        },
+                        "index": 4
+                     },
+                     {
+                        "name": "valueChanged",
+                        "plug": "input",
+                        "type": {
+                           "name": "*"
+                        },
+                        "index": 5
                      }
                   ],
-                  "dynamicports": [],
-                  "children": []
-               },
-               {
-                  "id": "b3d3976f-321c-0e17-226e-ecb1c0983ae9",
-                  "type": "Page Navigation Back",
-                  "x": 511.1311385270568,
-                  "y": 384.41035291770663,
-                  "parameters": {},
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": []
-               },
-               {
-                  "id": "fcb13528-edfa-ac41-d58b-710544f65034",
-                  "type": "Boolean",
-                  "x": -319.8561307691577,
-                  "y": 282.67858786045747,
-                  "parameters": {},
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": []
-               },
-               {
-                  "id": "d9970ad6-0f17-cf78-4d1a-08d83c350837",
-                  "type": "States",
-                  "label": "Back BTN Active States",
-                  "x": 42.86465434390152,
-                  "y": 279.5573327447003,
-                  "parameters": {
-                     "states": "active,deactive",
-                     "values": "opacity",
-                     "value-active-opacity": 1,
-                     "value-deactive-opacity": 0.3
-                  },
-                  "ports": [],
-                  "dynamicports": [
-                     {
-                        "type": {
-                           "name": "number",
-                           "allowConnectionsOnly": true
-                        },
-                        "plug": "output",
-                        "group": "Values",
-                        "name": "opacity",
-                        "index": 6
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "group": "active Values",
-                        "name": "value-active-opacity",
-                        "displayName": "opacity",
-                        "editorName": "active|opacity",
-                        "index": 7
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "enum",
-                           "enums": [
-                              {
-                                 "value": "easeOut",
-                                 "label": "Ease Out"
-                              },
-                              {
-                                 "value": "easeIn",
-                                 "label": "Ease In"
-                              },
-                              {
-                                 "value": "linear",
-                                 "label": "Linear"
-                              },
-                              {
-                                 "value": "easeInOut",
-                                 "label": "Ease In Out"
-                              }
-                           ]
-                        },
-                        "default": "easeOut",
-                        "displayName": "Easing Curve",
-                        "group": "active Transition",
-                        "name": "transition-active",
-                        "index": 8
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "default": 300,
-                        "displayName": "Duration",
-                        "group": "active Transition",
-                        "name": "duration-active",
-                        "index": 9
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "boolean",
-                           "allowConnectionsOnly": true
-                        },
-                        "displayName": "To active",
-                        "name": "to-active",
-                        "group": "Go to state",
-                        "index": 10
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "At active",
-                        "name": "at-active",
-                        "group": "Current state",
-                        "index": 11
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "Has Reached active",
-                        "name": "reached-active",
-                        "group": "Current state",
-                        "index": 12
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "group": "deactive Values",
-                        "name": "value-deactive-opacity",
-                        "displayName": "opacity",
-                        "editorName": "deactive|opacity",
-                        "index": 13
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "enum",
-                           "enums": [
-                              {
-                                 "value": "easeOut",
-                                 "label": "Ease Out"
-                              },
-                              {
-                                 "value": "easeIn",
-                                 "label": "Ease In"
-                              },
-                              {
-                                 "value": "linear",
-                                 "label": "Linear"
-                              },
-                              {
-                                 "value": "easeInOut",
-                                 "label": "Ease In Out"
-                              }
-                           ]
-                        },
-                        "default": "easeOut",
-                        "displayName": "Easing Curve",
-                        "group": "deactive Transition",
-                        "name": "transition-deactive",
-                        "index": 14
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "default": 300,
-                        "displayName": "Duration",
-                        "group": "deactive Transition",
-                        "name": "duration-deactive",
-                        "index": 15
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "boolean",
-                           "allowConnectionsOnly": true
-                        },
-                        "displayName": "To deactive",
-                        "name": "to-deactive",
-                        "group": "Go to state",
-                        "index": 16
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "At deactive",
-                        "name": "at-deactive",
-                        "group": "Current state",
-                        "index": 17
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "Has Reached deactive",
-                        "name": "reached-deactive",
-                        "group": "Current state",
-                        "index": 18
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "enum",
-                           "enums": [
-                              "active",
-                              "deactive"
-                           ]
-                        },
-                        "group": "States",
-                        "displayName": "Start at",
-                        "name": "startState",
-                        "default": "active",
-                        "index": 19
-                     }
-                  ],
-                  "children": []
-               },
-               {
-                  "id": "c639f6bc-6c5a-f79f-b772-7915e724dc08",
-                  "type": "Inverter",
-                  "x": -142.4893061004097,
-                  "y": 355.8582426759988,
-                  "parameters": {},
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": []
-               },
-               {
-                  "id": "31fe840c-b362-78f0-61b6-efe54ef06373",
-                  "type": "Page Navigation",
-                  "x": 519.4198259346795,
-                  "y": 607.0801368958975,
-                  "parameters": {},
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": []
-               },
-               {
-                  "id": "81b3581f-5cb4-4007-be1c-6dc04b1a2b96",
-                  "type": "Boolean",
-                  "x": -323.539613238403,
-                  "y": 635.951595216608,
-                  "parameters": {},
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": []
-               },
-               {
-                  "id": "d0024783-e373-03de-5506-d077dc848d47",
-                  "type": "States",
-                  "label": "Forward BTN Active States",
-                  "x": 39.18117187465623,
-                  "y": 632.8303401008509,
-                  "parameters": {
-                     "states": "active,deactive",
-                     "values": "opacity",
-                     "value-active-opacity": 1,
-                     "value-deactive-opacity": 0.3
-                  },
-                  "ports": [],
-                  "dynamicports": [
-                     {
-                        "type": {
-                           "name": "number",
-                           "allowConnectionsOnly": true
-                        },
-                        "plug": "output",
-                        "group": "Values",
-                        "name": "opacity",
-                        "index": 6
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "group": "active Values",
-                        "name": "value-active-opacity",
-                        "displayName": "opacity",
-                        "editorName": "active|opacity",
-                        "index": 7
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "enum",
-                           "enums": [
-                              {
-                                 "value": "easeOut",
-                                 "label": "Ease Out"
-                              },
-                              {
-                                 "value": "easeIn",
-                                 "label": "Ease In"
-                              },
-                              {
-                                 "value": "linear",
-                                 "label": "Linear"
-                              },
-                              {
-                                 "value": "easeInOut",
-                                 "label": "Ease In Out"
-                              }
-                           ]
-                        },
-                        "default": "easeOut",
-                        "displayName": "Easing Curve",
-                        "group": "active Transition",
-                        "name": "transition-active",
-                        "index": 8
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "default": 300,
-                        "displayName": "Duration",
-                        "group": "active Transition",
-                        "name": "duration-active",
-                        "index": 9
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "boolean",
-                           "allowConnectionsOnly": true
-                        },
-                        "displayName": "To active",
-                        "name": "to-active",
-                        "group": "Go to state",
-                        "index": 10
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "At active",
-                        "name": "at-active",
-                        "group": "Current state",
-                        "index": 11
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "Has Reached active",
-                        "name": "reached-active",
-                        "group": "Current state",
-                        "index": 12
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "group": "deactive Values",
-                        "name": "value-deactive-opacity",
-                        "displayName": "opacity",
-                        "editorName": "deactive|opacity",
-                        "index": 13
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "enum",
-                           "enums": [
-                              {
-                                 "value": "easeOut",
-                                 "label": "Ease Out"
-                              },
-                              {
-                                 "value": "easeIn",
-                                 "label": "Ease In"
-                              },
-                              {
-                                 "value": "linear",
-                                 "label": "Linear"
-                              },
-                              {
-                                 "value": "easeInOut",
-                                 "label": "Ease In Out"
-                              }
-                           ]
-                        },
-                        "default": "easeOut",
-                        "displayName": "Easing Curve",
-                        "group": "deactive Transition",
-                        "name": "transition-deactive",
-                        "index": 14
-                     },
-                     {
-                        "plug": "input",
-                        "type": "number",
-                        "default": 300,
-                        "displayName": "Duration",
-                        "group": "deactive Transition",
-                        "name": "duration-deactive",
-                        "index": 15
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "boolean",
-                           "allowConnectionsOnly": true
-                        },
-                        "displayName": "To deactive",
-                        "name": "to-deactive",
-                        "group": "Go to state",
-                        "index": 16
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "At deactive",
-                        "name": "at-deactive",
-                        "group": "Current state",
-                        "index": 17
-                     },
-                     {
-                        "plug": "output",
-                        "type": "boolean",
-                        "displayName": "Has Reached deactive",
-                        "name": "reached-deactive",
-                        "group": "Current state",
-                        "index": 18
-                     },
-                     {
-                        "plug": "input",
-                        "type": {
-                           "name": "enum",
-                           "enums": [
-                              "active",
-                              "deactive"
-                           ]
-                        },
-                        "group": "States",
-                        "displayName": "Start at",
-                        "name": "startState",
-                        "default": "active",
-                        "index": 19
-                     }
-                  ],
-                  "children": []
-               },
-               {
-                  "id": "4a6944d2-f30e-f0c5-fd03-5136ba4691e3",
-                  "type": "Inverter",
-                  "x": -146.17278856965498,
-                  "y": 709.1312500321494,
-                  "parameters": {},
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": []
-               }
-            ]
-         }
-      },
-      {
-         "name": "/Pages/01 Hello",
-         "graph": {
-            "connections": [
-               {
-                  "fromId": "c6820b61-cd2d-6914-6827-caf74093467b",
-                  "fromProperty": "touch.press",
-                  "toId": "523926c0-0e36-07bd-6a0a-7813eded3bf7",
-                  "toProperty": "open"
-               }
-            ],
-            "roots": [
-               {
-                  "id": "a98512a0-77e9-14da-1902-021e8b41f517",
-                  "type": "Page",
-                  "x": 337,
-                  "y": 278,
-                  "parameters": {
-                     "title": "Hello"
-                  },
-                  "ports": [],
-                  "dynamicports": [],
-                  "children": [
-                     {
-                        "id": "34d51bb5-4c85-4cde-75e5-d7bcb9b357d7",
-                        "type": "Rectangle",
-                        "x": 20,
-                        "y": 46,
-                        "parameters": {
-                           "color": "#FFA400"
-                        },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": []
-                     },
-                     {
-                        "id": "9bae6fbe-307e-1520-0dbd-4705ad931708",
-                        "type": "Image",
-                        "version": 2,
-                        "label": "Logo IMG",
-                        "x": 357,
-                        "y": 370,
-                        "parameters": {
-                           "image": "assets/noodl-logo-wh.png",
-                           "alignX": "center",
-                           "alignY": "center",
-                           "y": -100,
-                           "scaleX": 1.2,
-                           "scaleY": 1.2
-                        },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": []
-                     },
-                     {
-                        "id": "83a685ab-dbfd-eb25-f760-bf461a7f3579",
-                        "type": "Text",
-                        "version": 2,
-                        "x": 357,
-                        "y": 431,
-                        "parameters": {
-                           "text": "NOODL",
-                           "fontFamily": "assets/Muli-Regular.ttf",
-                           "alignX": "center",
-                           "alignY": "center",
-                           "y": 20,
-                           "alignment": "center",
-                           "verticalAlignment": "center"
-                        },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": []
-                     },
-                     {
-                        "id": "c6820b61-cd2d-6914-6827-caf74093467b",
-                        "type": "Group",
-                        "version": 2,
-                        "x": 20,
-                        "y": 214,
-                        "parameters": {
-                           "sizeMode": "explicit",
-                           "width": {
-                              "value": 150,
-                              "unit": "px"
-                           },
-                           "height": {
-                              "value": 50,
-                              "unit": "px"
-                           },
-                           "alignX": "center",
-                           "alignY": "center",
-                           "y": 130
-                        },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": [
-                           {
-                              "id": "5cb659b5-f7ea-08ab-2c2d-a4f645adc35c",
-                              "type": "Rectangle",
-                              "x": 20,
-                              "y": 46,
-                              "parameters": {
-                                 "color": "#ffffff",
-                                 "alignX": "center",
-                                 "alignY": "center"
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           },
-                           {
-                              "id": "af977f45-eecd-df38-9661-a908c5526130",
-                              "type": "Rectangle",
-                              "x": 20,
-                              "y": 92,
-                              "parameters": {
-                                 "color": "#FFA400",
-                                 "alignX": "center",
-                                 "alignY": "center",
-                                 "width": {
-                                    "value": 144,
-                                    "unit": "px"
-                                 },
-                                 "height": {
-                                    "value": 44,
-                                    "unit": "px"
-                                 }
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           },
-                           {
-                              "id": "a657a5ca-3d31-cacb-96af-4e1ca6280ce3",
-                              "type": "Text",
-                              "version": 2,
-                              "x": 20,
-                              "y": 138,
-                              "parameters": {
-                                 "text": "DOWNLOAD",
-                                 "fontFamily": "assets/Muli-Regular.ttf",
-                                 "alignX": "center",
-                                 "alignY": "center",
-                                 "alignment": "center",
-                                 "verticalAlignment": "center",
-                                 "fontSize": 20
-                              },
-                              "ports": [],
-                              "dynamicports": [],
-                              "children": []
-                           }
-                        ]
-                     },
-                     {
-                        "id": "47491f99-887a-1f11-a963-fc2d3e104f80",
-                        "type": "/Components/Page Navigation",
-                        "x": 20,
-                        "y": 449,
-                        "parameters": {
-                           "pageForwardPath": "/Pages/02 Noodl",
-                           "pageBackActive": false,
-                           "pageForwardActive": true
-                        },
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": []
-                     }
-                  ]
-               },
-               {
-                  "id": "523926c0-0e36-07bd-6a0a-7813eded3bf7",
-                  "type": "/Communication/Open URL",
-                  "x": 667.7379961333427,
-                  "y": 492.0260889331193,
-                  "parameters": {
-                     "url": "http://www.getnoodl.com/get-started/"
-                  },
-                  "ports": [],
                   "dynamicports": [],
                   "children": []
                }

@@ -27,8 +27,8 @@ const char *wifi_pass = "password"; // write the password INSIDE the quotation m
 
 const char *mqtt_broker = "broker.shiftr.io";
 const char *mqtt_name = "Arduino"; // you can change this to be anything
-const char *mqtt_key = "a5181468"; //replace with token info from your shiftr namespace aBCd01234 5a8c5868
-const char *mqtt_password = "9198ae837ad8bc76"; //replace with token info from your shiftr namespace aBcD0123ef56g7h8 173861e2b1ca817c
+const char *mqtt_key = "c67b05a8"; //replace with token info from your shiftr namespace aBCd01234 5a8c5868
+const char *mqtt_password = "206dd39e7aee15b5"; //replace with token info from your shiftr namespace aBcD0123ef56g7h8 173861e2b1ca817c
 
 WiFiClient wifi_client; // Use ssl for arduino cloud
 MQTTClient mqtt_client; // mqtt connection
