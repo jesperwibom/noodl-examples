@@ -1,0 +1,15 @@
+{
+  "name": "websocket-serial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "websocket-serial.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serialport": "^4.0.6",
+    "ws": "^1.1.1"
+  }
+}
